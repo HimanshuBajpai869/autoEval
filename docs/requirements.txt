@@ -9,4 +9,4 @@ sphinxcontrib-jsmath
 sphinxcontrib-qthelp
 sphinxcontrib-serializinghtml
 matplotlib
-sklearn
+scikit-learn
