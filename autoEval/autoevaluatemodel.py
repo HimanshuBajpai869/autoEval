@@ -43,9 +43,10 @@ def auto_evaluate_model(
 
     modelling_task_type : str, optional
         The name of modelling task type. The default value is "regression". It should be one of the below -
-        - Regression
-        - Classification
-        - Forecasting
+
+        1. Regression
+        2. Classification
+        3. Forecasting
 
     Returns : None
         The function performs the auto evaluation of the model and dislays the result.
