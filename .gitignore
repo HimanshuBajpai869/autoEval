@@ -1,0 +1,5 @@
+dist/
+.vscode/
+*.pyc*
+autoEval.egg-info/
+.DS_Store
