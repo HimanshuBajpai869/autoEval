@@ -1,9 +1,6 @@
-from autoEval.python.reports.regression_report import visualize_regression_predictions
-from autoEval.python.evaluation.evaluate_regression import evaluate_regression_model
-from autoEval.python.fairness.fairness_regression import get_fairness_report
-import warnings
-
-warnings.filterwarnings("ignore")
+from ..python.reports.regression_report import visualize_regression_predictions
+from ..python.evaluation.evaluate_regression import evaluate_regression_model
+from ..python.fairness.fairness_regression import get_fairness_report
 
 
 def autoevaluate_regression(
