@@ -1,34 +1,22 @@
-from autoEval.python.reports.regression_report import visualize_regression_predictions
-from autoEval.python.evaluation.evaluate_regression import evaluate_regression_model
-from autoEval.python.fairness.fairness_regression import get_fairness_report
-import warnings
-
-warnings.filterwarnings("ignore")
+from autoEval.evaluator.evaluate_regression import autoevaluate_regression
+from autoEval.helpers.enumerators import ModellingTaskType
 
 
-def autoevaluate_regression(
+def auto_evaluate_model(
     model,
     train_predictions,
     test_predictions,
     feature_columns,
     target,
     prediction_column,
+    modelling_task_type="regression",
 ):
-    print(f"\n PERFORMANCE METRICS :")
-    print(
-        evaluate_regression_model(
-            train_predictions, test_predictions, target, prediction_column
+    if modelling_task_type.lower() == ModellingTaskType.Regression.value.lower():
+        autoevaluate_regression(
+            model,
+            train_predictions,
+            test_predictions,
+            feature_columns,
+            target,
+            prediction_column,
         )
-    )
-
-    print(f"\n VISUALIZE REPORTS :")
-    visualize_regression_predictions(
-        train_predictions, test_predictions, target, prediction_column
-    )
-
-    print(f"\n FAIRNESS REPORT :")
-    print(
-        get_fairness_report(
-            model, train_predictions, test_predictions, feature_columns, target
-        )
-    )
