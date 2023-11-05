@@ -1,5 +1,6 @@
 from .autoEval.evaluator.evaluate_regression import autoevaluate_regression
 from .autoEval.evaluator.evaluate_classification import autoevaluate_classification
+from .autoEval.testing.model_testing import perform_model_testing
 from .autoEval.helpers.enumerators import ModellingTaskType
 import warnings
 
@@ -76,3 +77,7 @@ def auto_evaluate_model(
         raise Exception(
             f"The input modelling task type {modelling_task_type} is currently not supported."
         )
+
+    perform_model_testing(
+        model, train_predictions, test_predictions, feature_columns, target
+    )

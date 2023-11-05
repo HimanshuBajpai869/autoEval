@@ -10,3 +10,4 @@ sphinxcontrib-qthelp
 sphinxcontrib-serializinghtml
 matplotlib
 scikit-learn
+deepchecks
