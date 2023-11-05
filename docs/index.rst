@@ -6,11 +6,12 @@
 Welcome to autoEval's documentation!
 ====================================
 
-The function helps evaluate the model and provides below reports :
+The library helps evaluate the model and provides below reports :
 
    1. Model Performance Metrics
    2. Model Performance Report
    3. Model Fairness Report
+   4. Model Testing Report
 
 .. toctree::
    :maxdepth: 2
