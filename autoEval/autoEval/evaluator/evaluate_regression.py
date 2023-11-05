@@ -1,6 +1,6 @@
 from ..python.reports.regression_report import visualize_regression_predictions
 from ..python.evaluation.evaluate_regression import evaluate_regression_model
-from ..python.fairness.fairness_regression import get_fairness_report
+from ..python.fairness.fairness_regression import get_regression_fairness_report
 
 
 def autoevaluate_regression(
@@ -25,7 +25,7 @@ def autoevaluate_regression(
 
     print(f"\n FAIRNESS REPORT :")
     print(
-        get_fairness_report(
+        get_regression_fairness_report(
             model, train_predictions, test_predictions, feature_columns, target
         )
     )

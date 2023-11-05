@@ -1,4 +1,5 @@
 from .autoEval.evaluator.evaluate_regression import autoevaluate_regression
+from .autoEval.evaluator.evaluate_classification import autoevaluate_classification
 from .autoEval.helpers.enumerators import ModellingTaskType
 import warnings
 
@@ -54,6 +55,16 @@ def auto_evaluate_model(
 
     if modelling_task_type.lower() == ModellingTaskType.Regression.value.lower():
         autoevaluate_regression(
+            model,
+            train_predictions,
+            test_predictions,
+            feature_columns,
+            target,
+            prediction_column,
+        )
+
+    elif modelling_task_type.lower() == ModellingTaskType.Classification.value.lower():
+        autoevaluate_classification(
             model,
             train_predictions,
             test_predictions,

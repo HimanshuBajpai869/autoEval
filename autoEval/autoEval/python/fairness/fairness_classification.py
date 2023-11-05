@@ -1,8 +1,8 @@
 from ...helpers.data_helper import detect_categorical_columns
-from ..evaluation.evaluate_regression import evaluate_regression_model
+from ..evaluation.evaluate_classification import evaluate_classification_model
 
 
-def get_regression_fairness_report(
+def get_classification_fairness_report(
     model, train_output, test_output, feature_columns, target
 ):
     categorical_columns = detect_categorical_columns(train_output)
@@ -25,7 +25,7 @@ def get_regression_fairness_report(
                 test_filtered_df[feature_columns]
             )
 
-            column_bias_report[f"{value}_bias_report"] = evaluate_regression_model(
+            column_bias_report[f"{value}_bias_report"] = evaluate_classification_model(
                 train_filtered_df, test_filtered_df, target, "prediction"
             )
 
