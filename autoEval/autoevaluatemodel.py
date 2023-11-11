@@ -17,41 +17,42 @@ def auto_evaluate_model(
     modelling_task_type="regression",
 ):
     """
-    The function helps evaluate the model and provides below reports :
+     The function helps evaluate the model and provides below reports :
 
     1. Model Performance Metrics
     2. Model Performance Report
     3. Model Fairness Report
+    4. Model Testing Report
 
-    Inputs :
+     Inputs :
 
-    model : object
-        The model instance from sklearn/spark or pipeline object.
+     model : object
+         The model instance from sklearn/spark or pipeline object.
 
-    train_predictions : dataframe
-        The dataframe with feature columns, target, predicted column with train data.
+     train_predictions : dataframe
+         The dataframe with feature columns, target, predicted column with train data.
 
-    test_predictions : dataframe
-        The dataframe with feature columns, target, predicted column with test data.
+     test_predictions : dataframe
+         The dataframe with feature columns, target, predicted column with test data.
 
-    feature_columns : list
-        The list of feature columns used for training the model.
+     feature_columns : list
+         The list of feature columns used for training the model.
 
-    target : str
-        The name of the actual target column available in the dataframe.
+     target : str
+         The name of the actual target column available in the dataframe.
 
-    prediction_column : str
-        The name of the predicted column containing the model predictions.
+     prediction_column : str
+         The name of the predicted column containing the model predictions.
 
-    modelling_task_type : str, optional
-        The name of modelling task type. The default value is "regression". It should be one of the below -
+     modelling_task_type : str, optional
+         The name of modelling task type. The default value is "regression". It should be one of the below -
 
-        1. Regression
-        2. Classification
-        3. Forecasting
+         1. Regression
+         2. Classification
+         3. Forecasting
 
-    Returns : None
-        The function performs the auto evaluation of the model and dislays the result.
+     Returns : None
+         The function performs the auto evaluation of the model and dislays the result.
     """
 
     if modelling_task_type.lower() == ModellingTaskType.Regression.value.lower():
